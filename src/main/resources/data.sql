@@ -1,5 +1,5 @@
 INSERT INTO sample_data (name)
-SELECT 'jeswanth'
+SELECT 'Jeswanth'
 WHERE NOT EXISTS (SELECT 1 FROM sample_data WHERE name = 'jeswanth');
 
 INSERT INTO sample_data (name)
