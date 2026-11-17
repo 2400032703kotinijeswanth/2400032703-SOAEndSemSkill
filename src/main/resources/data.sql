@@ -1,7 +1,7 @@
 INSERT INTO sample_data (name)
-SELECT 'Harsha'
-WHERE NOT EXISTS (SELECT 1 FROM sample_data WHERE name = 'Harsha');
+SELECT 'jeswanth'
+WHERE NOT EXISTS (SELECT 1 FROM sample_data WHERE name = 'jeswanth');
 
 INSERT INTO sample_data (name)
-SELECT 'Sai'
-WHERE NOT EXISTS (SELECT 1 FROM sample_data WHERE name = 'Sai');
+SELECT 'kotini'
+WHERE NOT EXISTS (SELECT 1 FROM sample_data WHERE name = 'kotini');
