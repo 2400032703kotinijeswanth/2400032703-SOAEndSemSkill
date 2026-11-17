@@ -40,7 +40,7 @@ curl http://localhost:8080/api/data
 
 You can also open this URL directly in your browser:
 
-`http://localhost:8080/api/data`
+http://localhost:8080/api/data
 
 ### Expected Response
 
@@ -61,7 +61,7 @@ You can also open this URL directly in your browser:
 
 To check the application health, visit:
 
-`http://localhost:8080/api/health`
+http://localhost:8080/api/health
 
 ### View Container Logs
 
