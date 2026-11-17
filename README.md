@@ -1,37 +1,48 @@
-# Spring Boot + MySQL Docker Compose Experiment
+# Spring Boot + MySQL Docker Compose Project
 
-This project runs two containers:
-- `app-service`: Spring Boot REST API on port 8080
-- `app-db`: MySQL database on port 3306
+This project demonstrates how to run a Spring Boot application and a MySQL database using Docker Compose.
+
+The project uses two containers:
+
+- `app-service` – Spring Boot REST API running on port `8080`
+- `app-db` – MySQL database running on port `3306`
 
 ## Requirements
-- Docker Desktop (or Docker Engine)
+
+Before running the project, make sure you have:
+
+- Docker Desktop (or Docker Engine) installed
 - Docker Compose v2 (`docker compose`)
 
-## Run
-Open a terminal in this project folder and run:
+## Running the Project
+
+Open a terminal in the project directory and execute:
 
 ```bash
 docker compose up -d --build
 ```
 
-Check containers:
+This command builds the application image and starts both containers in the background.
+
+### Check Container Status
 
 ```bash
 docker compose ps
 ```
 
-Test the API:
+### Test the API
+
+Use the following command to access the API:
 
 ```bash
 curl http://localhost:8080/api/data
 ```
 
-Open this URL in a browser if preferred:
+You can also open this URL directly in your browser:
 
 `http://localhost:8080/api/data`
 
-Expected response:
+### Expected Response
 
 ```json
 {
@@ -44,32 +55,55 @@ Expected response:
 }
 ```
 
-The exact IDs/order can differ if the database volume already contains data.
+*Note: The IDs and order of records may vary if the database volume already contains data.*
 
-Health endpoint:
+### Health Check
+
+To check the application health, visit:
 
 `http://localhost:8080/api/health`
 
-View logs:
+### View Container Logs
+
+To view the application logs:
 
 ```bash
 docker compose logs -f app-service
+```
+
+To view the MySQL database logs:
+
+```bash
 docker compose logs -f app-db
 ```
 
-Stop containers:
+### Stop the Containers
+
+To stop and remove the running containers:
 
 ```bash
 docker compose down
 ```
 
-Stop containers and delete the database volume (this permanently removes stored database data):
+To stop the containers and also remove the database volume:
 
 ```bash
 docker compose down -v
 ```
 
-## How it works
-Docker Compose creates a shared network. The Spring Boot application connects to MySQL using
-the service hostname `app-db`, not `localhost`. The database health check ensures MySQL is ready
-before the application container starts.
+**Warning:** Using `docker compose down -v` permanently deletes the stored database data.
+
+## How It Works
+
+Docker Compose creates a shared network between the application and database containers. The Spring Boot application connects to MySQL using the service hostname `app-db` instead of `localhost`.
+
+A database health check helps ensure that MySQL is ready before the application container starts.
+
+## Technologies Used
+
+- Java
+- Spring Boot
+- MySQL
+- Docker
+- Docker Compose
+- REST API
