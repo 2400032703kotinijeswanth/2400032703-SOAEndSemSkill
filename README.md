@@ -49,8 +49,8 @@ You can also open this URL directly in your browser:
   "status": "success",
   "message": "Data retrieved successfully",
   "data": [
-    {"id": 1, "name": "Harsha"},
-    {"id": 2, "name": "Sai"}
+    {"id": 1, "name": "jeswanth"},
+    {"id": 2, "name": "kotini"}
   ]
 }
 ```
