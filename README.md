@@ -49,7 +49,7 @@ http://localhost:8080/api/data
   "status": "success",
   "message": "Data retrieved successfully",
   "data": [
-    {"id": 1, "name": "jeswanth"},
+    {"id": 1, "name": "Jeswanth"},
     {"id": 2, "name": "kotini"}
   ]
 }
